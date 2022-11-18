@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-
+import 'loginPage.dart';
+import 'signupPage.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -43,8 +44,7 @@ class Menu extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height / 3,
                 decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/Logo."))),
+                    image: DecorationImage(image: AssetImage("assets/Logo."))),
               ),
               Column(
                 children: <Widget>[
@@ -53,8 +53,12 @@ class Menu extends StatelessWidget {
                     minWidth: double.infinity,
                     height: 60,
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const LoginPage()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      );
                     },
                     // shape
                     shape: RoundedRectangleBorder(
@@ -73,9 +77,11 @@ class Menu extends StatelessWidget {
                     height: 60,
                     onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignupPage()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignupPage(),
+                        ),
+                      );
                     },
                     color: Colors.black,
                     shape: RoundedRectangleBorder(
