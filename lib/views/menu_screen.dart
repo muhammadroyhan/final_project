@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'loginPage.dart';
 import 'signupPage.dart';
 
-class Menu extends StatelessWidget {
-  const Menu({super.key});
+class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,23 +29,15 @@ class Menu extends StatelessWidget {
                       fontSize: 30,
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Hello Kawan-Kawan",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                      fontSize: 15,
-                    ),
-                  )
                 ],
               ),
               Container(
                 height: MediaQuery.of(context).size.height / 3,
                 decoration: const BoxDecoration(
-                    image: DecorationImage(image: AssetImage("assets/Logo."))),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/logo.png"),
+                  ),
+                ),
               ),
               Column(
                 children: <Widget>[
@@ -63,11 +56,13 @@ class Menu extends StatelessWidget {
                     // shape
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(50)),
+                        borderRadius: BorderRadius.circular(20)),
                     child: const Text(
                       "Login",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
                     ),
                   ),
                   // signup button
@@ -85,7 +80,7 @@ class Menu extends StatelessWidget {
                     },
                     color: Colors.black,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50)),
+                        borderRadius: BorderRadius.circular(20)),
                     child: const Text(
                       "Register",
                       style: TextStyle(
