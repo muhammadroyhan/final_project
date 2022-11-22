@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:final_project/views/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,24 +8,38 @@ class SignupPage extends StatelessWidget {
   SignupPage({super.key});
 
   TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
         child: ListView(
           children: <Widget>[
             Container(
               alignment: Alignment.center,
               padding: EdgeInsets.all(10),
               child: Text(
-                "Login",
+                "Register",
+                style: GoogleFonts.urbanist(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30),
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(4),
+              child: Text(
+                "Please Fill the Form",
                 style: GoogleFonts.urbanist(
                   color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30),
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                ),
               ),
             ),
             Container(
@@ -33,12 +48,22 @@ class SignupPage extends StatelessWidget {
                 controller: nameController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
+                  labelText: 'Username',
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
                   labelText: 'Email',
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 24),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
@@ -48,9 +73,16 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
             ),
-            TextButton(
-              onPressed: () {},
-              child: Text('Forgot Password'),
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 24),
+              child: TextField(
+                obscureText: true,
+                controller: confirmpasswordController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm Password',
+                ),
+              ),
             ),
             Container(
               height: 50,
@@ -58,21 +90,38 @@ class SignupPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   print(nameController.text);
+                  print(emailController.text);
+                  print(passwordController.text);
                   print(passwordController.text);
                 },
-                child: Text('Login'),
+                child: Text('REGISTER'),
+                style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.black),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                  ),
+                ),
               ),
             ),
             Row(
               // ignore: sort_child_properties_last
               children: <Widget>[
-                Text("Doesn't have an account?"),
+                Text("Already have an account?"),
                 TextButton(
                   onPressed: () {
-                    // Sign Up Page
+                    // LogIn Page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    );
                   },
                   child: Text(
-                    'Sign In',
+                    'Login',
                     style: TextStyle(fontSize: 20),
                   ),
                 ),
