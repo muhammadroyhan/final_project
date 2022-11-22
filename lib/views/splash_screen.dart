@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:final_project/views/loginPage.dart';
+import 'package:final_project/views/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => LoginPage(),
+          builder: (context) => OnboardingPage(),
         ),
       );
     });
