@@ -8,20 +8,22 @@ class SignupPage extends StatelessWidget {
   SignupPage({super.key});
 
   TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsetsDirectional.fromSTEB(10, 20, 10, 10),
         child: ListView(
           children: <Widget>[
             Container(
               alignment: Alignment.center,
               padding: EdgeInsets.all(10),
               child: Text(
-                "Login",
+                "Register",
                 style: GoogleFonts.urbanist(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -29,39 +31,57 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(10),
-              child: TextField(
-                controller: nameController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  labelText: 'Email',
-                  labelStyle: GoogleFonts.urbanist(color: Colors.black54),
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(4),
+              child: Text(
+                "Please Fill the Form",
+                style: GoogleFonts.urbanist(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                controller: nameController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Username',
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 24),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+                  border: OutlineInputBorder(),
                   labelText: 'Password',
-                  labelStyle: GoogleFonts.urbanist(
-                    color: Colors.black54,
-                  ),
                 ),
               ),
             ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Forgot Password',
-                style: GoogleFonts.urbanist(),
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 24),
+              child: TextField(
+                obscureText: true,
+                controller: confirmpasswordController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm Password',
+                ),
               ),
             ),
             Container(
@@ -70,20 +90,17 @@ class SignupPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   print(nameController.text);
+                  print(emailController.text);
+                  print(passwordController.text);
                   print(passwordController.text);
                 },
-                child: Text(
-                  'Login',
-                  style: GoogleFonts.urbanist(
-                    fontSize: 20,
-                  ),
-                ),
+                child: Text('REGISTER'),
                 style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.black),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(18),
                     ),
                   ),
                 ),
@@ -92,14 +109,10 @@ class SignupPage extends StatelessWidget {
             Row(
               // ignore: sort_child_properties_last
               children: <Widget>[
-                Text(
-                  "Doesn't have an account?",
-                  style: GoogleFonts.urbanist(
-                    color: Colors.black54,
-                  ),
-                ),
+                Text("Already have an account?"),
                 TextButton(
                   onPressed: () {
+                    // LogIn Page
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -108,10 +121,8 @@ class SignupPage extends StatelessWidget {
                     );
                   },
                   child: Text(
-                    'Sign In',
-                    style: GoogleFonts.urbanist(
-                      fontSize: 16,
-                    ),
+                    'Login',
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ],
