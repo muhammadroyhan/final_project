@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:final_project/views/home_page.dart';
 import 'package:final_project/views/menu_screen.dart';
 import 'package:final_project/views/signupPage.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MenuPage(),
+                    builder: (context) => HomePage(),
                   ),
                 );
               },

@@ -47,8 +47,11 @@ class SignupPage extends StatelessWidget {
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   labelText: 'Username',
+                  labelStyle: GoogleFonts.urbanist(),
                 ),
               ),
             ),
@@ -57,19 +60,25 @@ class SignupPage extends StatelessWidget {
               child: TextField(
                 controller: emailController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   labelText: 'Email',
+                  labelStyle: GoogleFonts.urbanist(),
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 24),
+              padding: EdgeInsets.all(10),
               child: TextField(
                 obscureText: true,
                 controller: passwordController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   labelText: 'Password',
+                  labelStyle: GoogleFonts.urbanist(),
                 ),
               ),
             ),
@@ -79,8 +88,11 @@ class SignupPage extends StatelessWidget {
                 obscureText: true,
                 controller: confirmpasswordController,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   labelText: 'Confirm Password',
+                  labelStyle: GoogleFonts.urbanist(),
                 ),
               ),
             ),
@@ -89,12 +101,19 @@ class SignupPage extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: ElevatedButton(
                 onPressed: () {
-                  print(nameController.text);
-                  print(emailController.text);
-                  print(passwordController.text);
-                  print(passwordController.text);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginPage(),
+                    ),
+                  );
                 },
-                child: Text('REGISTER'),
+                child: Text(
+                  'REGISTER',
+                  style: GoogleFonts.urbanist(
+                    fontSize: 14,
+                  ),
+                ),
                 style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all<Color>(Colors.black),
@@ -109,7 +128,10 @@ class SignupPage extends StatelessWidget {
             Row(
               // ignore: sort_child_properties_last
               children: <Widget>[
-                Text("Already have an account?"),
+                Text(
+                  "Already have an account?",
+                  style: GoogleFonts.urbanist(),
+                ),
                 TextButton(
                   onPressed: () {
                     // LogIn Page
@@ -122,7 +144,8 @@ class SignupPage extends StatelessWidget {
                   },
                   child: Text(
                     'Login',
-                    style: TextStyle(fontSize: 20),
+                    style: GoogleFonts.urbanist(
+                        fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                 ),
               ],
