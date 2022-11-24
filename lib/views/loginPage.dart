@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:final_project/views/home_page.dart';
 import 'package:final_project/views/menu_screen.dart';
+import 'package:final_project/views/signupPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -81,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MenuPage(),
+                    builder: (context) => HomePage(),
                   ),
                 );
               },
@@ -119,10 +121,15 @@ class _LoginPageState extends State<LoginPage> {
               ),
               TextButton(
                 onPressed: () {
-                  // Sign Up Page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignupPage(),
+                    ),
+                  );
                 },
                 child: Text(
-                  'Sign In',
+                  'Sign Up',
                   style: GoogleFonts.urbanist(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
