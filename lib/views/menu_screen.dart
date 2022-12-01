@@ -22,9 +22,9 @@ class MenuPage extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  const Text(
+                  Text(
                     "Welcome",
-                    style: TextStyle(
+                    style: GoogleFonts.urbanist(
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
                     ),
@@ -57,11 +57,11 @@ class MenuPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(20)),
-                    child: const Text(
+                    child: Text(
                       "Login",
-                      style: TextStyle(
+                      style: GoogleFonts.urbanist(
                         fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                        fontSize: 20,
                       ),
                     ),
                   ),
@@ -81,12 +81,13 @@ class MenuPage extends StatelessWidget {
                     color: Colors.black,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    child: const Text(
+                    child: Text(
                       "Register",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
+                      style: GoogleFonts.urbanist(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
                     ),
                   )
                 ],
