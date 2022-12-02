@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:final_project/edit_profile.dart';
 import 'package:final_project/views/home_page.dart';
 import 'package:final_project/views/menu_screen.dart';
 import 'package:final_project/views/signupPage.dart';
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomePage(),
+                    builder: (context) => EditProfilePage(),
                   ),
                 );
               },
