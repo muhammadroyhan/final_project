@@ -83,19 +83,8 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 24),
-              child: TextField(
-                obscureText: true,
-                controller: confirmpasswordController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  labelText: 'Confirm Password',
-                  labelStyle: GoogleFonts.urbanist(),
-                ),
-              ),
+            SizedBox(
+              height: 20,
             ),
             Container(
               height: 50,
@@ -112,6 +101,7 @@ class SignupPage extends StatelessWidget {
                 child: Text(
                   'REGISTER',
                   style: GoogleFonts.urbanist(
+                    fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),
                 ),
