@@ -1,4 +1,7 @@
+import 'package:final_project/edit_profile.dart';
+import 'package:final_project/views/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TabbarScreen extends StatelessWidget {
   const TabbarScreen({super.key});
@@ -14,7 +17,7 @@ class TabbarScreen extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     CircleAvatar(
                       backgroundImage: NetworkImage(
                           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU3d7NsTUucn-oy_9wKTTwSoKAlmGkc59-Lg&usqp=CAU"),
@@ -24,8 +27,20 @@ class TabbarScreen extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
-                    Icon(Icons.expand_more),
-                    Icon(Icons.settings),
+                    SizedBox(
+                      width: 16,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditProfilePage(),
+                          ),
+                        );
+                      },
+                      icon: Icon(Icons.settings),
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -73,7 +88,12 @@ class TabbarScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
             },
           ),
           ListTile(
@@ -160,7 +180,29 @@ class TabbarScreen extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 160,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 72, right: 72),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.logout),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    "Log Out",
+                    style: GoogleFonts.urbanist(),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
