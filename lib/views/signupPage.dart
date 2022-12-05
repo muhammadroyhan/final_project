@@ -10,6 +10,7 @@ class SignupPage extends StatelessWidget {
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
 
@@ -65,6 +66,19 @@ class SignupPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   labelText: 'Email',
+                  labelStyle: GoogleFonts.urbanist(),
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                controller: phoneNumberController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  labelText: 'Phone Number',
                   labelStyle: GoogleFonts.urbanist(),
                 ),
               ),

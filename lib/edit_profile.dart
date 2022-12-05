@@ -1,7 +1,5 @@
-
 import 'package:final_project/views/home_page.dart';
 import 'package:flutter/material.dart';
-
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -16,32 +14,24 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 1,
         leading: IconButton(
             icon: const Icon(
-              Icons.home,
-              color: Colors.black,
+              Icons.arrow_back,
+              color: Colors.white,
             ),
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const HomePage()));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomePage(),
+                ),
+              );
             }),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => const HomePage()));
-            },
-          ),
-        ],
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
+        padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -85,20 +75,22 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         bottom: 0,
                         right: 0,
                         child: Container(
-                          height: 40,
-                          width: 40,
+                          height: 45,
+                          width: 45,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              width: 4,
-                              color:
-                                  Theme.of(context).scaffoldBackgroundColor,
+                              width: 3,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                             color: Colors.black,
                           ),
-                          child: const Icon(
-                            Icons.edit,
-                            color: Colors.white,
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.edit,
+                              color: Colors.white,
+                            ),
                           ),
                         ))
                   ],
@@ -113,14 +105,16 @@ class _EditProfilePageState extends State<EditProfilePage> {
               buildTextField("Location", "Jln. Mangga no 2 Surakarta", false),
               buildTextField("No Telp", "082132581877", false),
               Center(
-                child: OutlinedButton(
+                child: ElevatedButton(
                   style: OutlinedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20))),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const HomePage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()));
                   },
                   child: const Text("SAVE",
                       style: TextStyle(
