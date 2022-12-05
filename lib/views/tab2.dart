@@ -6,7 +6,7 @@ class Tab2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Tab 2'),
+      body: Text(''),
     );
   }
 }

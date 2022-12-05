@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'add_task.dart';
@@ -53,20 +54,47 @@ class Tab1 extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Scaffold(
-              floatingActionButton: FloatingActionButton(
-                onPressed: () => addTask(),
-                tooltip: 'add',
-                backgroundColor: Colors.black,
-                child: Icon(Icons.add)),
+            Padding(
+              padding: const EdgeInsets.only(
+                bottom: 500,
               ),
-            Container(
-              color: Colors.red,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Today",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Container(
+                    width: 90,
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          CupertinoIcons.plus,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
             Container(
-              color: Colors.yellow,
+              color: Colors.white,
             ),
-            
+            Container(
+              color: Colors.white,
+            ),
           ],
         ),
       ),
