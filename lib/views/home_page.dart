@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage>
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: [
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 Container(
                   // height: 20,
                   width: MediaQuery.of(context).size.height,
@@ -107,6 +107,7 @@ class _HomePageState extends State<HomePage>
                             Tab(
                               text: 'Calendar',
                             ),
+                            
                           ],
                         ),
                       ),
@@ -121,12 +122,13 @@ class _HomePageState extends State<HomePage>
                     Tab2(),
                   ],
                   ),
+                  
                 )
                 ])
-              
+                
             ),
           ),
+          
         ),
     );
-  }
-}
+  }}
