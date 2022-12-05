@@ -1,5 +1,6 @@
 import 'package:final_project/views/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
@@ -116,11 +117,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         MaterialPageRoute(
                             builder: (context) => const HomePage()));
                   },
-                  child: const Text("SAVE",
-                      style: TextStyle(
+                  child: Text("SAVE",
+                      style: GoogleFonts.urbanist(
                           fontSize: 16,
                           letterSpacing: 2.2,
-                          color: Colors.black)),
+                          color: Colors.white)),
                 ),
               )
             ],

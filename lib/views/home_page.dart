@@ -1,3 +1,4 @@
+import 'package:final_project/views/add_task.dart';
 import 'package:final_project/views/tab1.dart';
 import 'package:final_project/views/tab2.dart';
 import 'package:final_project/views/tabbar_page.dart';
@@ -28,63 +29,56 @@ class _HomePageState extends State<HomePage>
     super.dispose();
   }
 
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: TabbarScreen(),
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Center(
-          child: Text('Home',
-          style: GoogleFonts.urbanist(
-            color: Colors.black,
-            fontSize: 25,
+          title: Center(
+            child: Text(
+              'Home',
+              style: GoogleFonts.urbanist(
+                color: Colors.white,
+                fontSize: 25,
+              ),
+            ),
           ),
-      ),
-      ),
-      actions: [
-          Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.notifications_outlined,
-                  color: Colors.black,
+          actions: [
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications_outlined,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  UniconsLine.setting,
-                  color: Colors.black,
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    UniconsLine.setting,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: 4,
-              ),
-            ],
-          ),
-      ]),
+                SizedBox(
+                  width: 4,
+                ),
+              ],
+            ),
+          ]),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Container(
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              children: [
+              height: MediaQuery.of(context).size.height,
+              child: Column(children: [
                 SizedBox(height: 10),
                 Container(
                   // height: 20,
                   width: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: Colors.black45,
                       borderRadius: BorderRadius.circular(5)),
                   child: Column(
                     children: [
@@ -107,7 +101,6 @@ class _HomePageState extends State<HomePage>
                             Tab(
                               text: 'Calendar',
                             ),
-                            
                           ],
                         ),
                       ),
@@ -117,18 +110,35 @@ class _HomePageState extends State<HomePage>
                 Expanded(
                   child: TabBarView(
                     controller: tabController,
-                  children: [
-                    Tab1(),
-                    Tab2(),
-                  ],
+                    children: [
+                      Tab1(),
+                      Tab2(),
+                    ],
                   ),
-                  
                 )
-                ])
-                
-            ),
-          ),
-          
+              ])),
         ),
+      ),
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.blue,
+        ),
+        child: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => addTask(),
+              ),
+            );
+          },
+          icon: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
-  }}
+  }
+}
