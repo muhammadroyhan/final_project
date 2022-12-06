@@ -17,6 +17,7 @@ class _AddNewTaskState extends State<AddNewTask> {
   late TextEditingController _EndTime;
   DateTime SelectedDate = DateTime.now();
   String Category = "Meeting";
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -188,7 +189,7 @@ class _AddNewTaskState extends State<AddNewTask> {
                           children: [
                             Container(
                               width: MediaQuery.of(context).size.width * 0.4,
-                              child: TextField(
+                              child: TextFormField(
                                 readOnly: true,
                                 controller: _StartTime,
                                 decoration: InputDecoration(
@@ -220,7 +221,7 @@ class _AddNewTaskState extends State<AddNewTask> {
                             ),
                             Container(
                               width: MediaQuery.of(context).size.width * 0.4,
-                              child: TextField(
+                              child: TextFormField(
                                 readOnly: true,
                                 controller: _EndTime,
                                 decoration: InputDecoration(
@@ -256,6 +257,7 @@ class _AddNewTaskState extends State<AddNewTask> {
                       Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 20),
                         child: TextFormField(
+                          validator: ((value) {}),
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 8,
@@ -369,22 +371,26 @@ class _AddNewTaskState extends State<AddNewTask> {
                       SizedBox(
                         height: 100,
                       ),
-                      Container(
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color.fromRGBO(130, 0, 255, 1),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Create Task",
-                          style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.normal,
+                      Center(
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.blue,
+                            ),
+                            fixedSize: MaterialStateProperty.all<Size>(
+                                Size(250, 25)),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "Create Task",
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

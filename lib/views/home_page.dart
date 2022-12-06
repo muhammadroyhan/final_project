@@ -45,26 +45,15 @@ class _HomePageState extends State<HomePage>
             ),
           ),
           actions: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.notifications_outlined,
-                    color: Colors.white,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    UniconsLine.setting,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  width: 4,
-                ),
-              ],
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.notifications_outlined,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: 16,
             ),
           ]),
       body: SingleChildScrollView(
