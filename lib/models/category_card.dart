@@ -11,20 +11,22 @@ class Categorcard extends StatelessWidget {
   final bool isActive;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(5),
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: !this.isActive
-            ? Color.fromRGBO(221, 229, 249, 1)
-            : Color.fromRGBO(130, 0, 255, 1),
-        borderRadius: BorderRadius.all(Radius.circular(5)),
-      ),
-      child: Text(
-        this.CategoryText,
-        style: GoogleFonts.montserrat(
-          color: !this.isActive ? Colors.grey : Colors.white,
-          fontSize: 12,
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.all(5),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: !this.isActive
+              ? Color.fromRGBO(221, 229, 249, 1)
+              : Color.fromRGBO(130, 0, 255, 1),
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+        ),
+        child: Text(
+          this.CategoryText,
+          style: GoogleFonts.montserrat(
+            color: !this.isActive ? Colors.grey : Colors.white,
+            fontSize: 12,
+          ),
         ),
       ),
     );

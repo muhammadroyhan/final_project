@@ -23,12 +23,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               color: Colors.white,
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HomePage(),
-                ),
-              );
+              Navigator.pop(context);
             }),
       ),
       body: Container(

@@ -1,5 +1,5 @@
 import 'package:final_project/views/add_task.dart';
-import 'package:final_project/views/tab1.dart';
+import 'package:final_project/views/mywork.dart';
 import 'package:final_project/views/tab2.dart';
 import 'package:final_project/views/tabbar_page.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage>
                   // height: 20,
                   width: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
-                      color: Colors.black45,
+                      color: Colors.blue,
                       borderRadius: BorderRadius.circular(5)),
                   child: Column(
                     children: [
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage>
                         child: TabBar(
                           unselectedLabelColor: Colors.white,
                           labelColor: Colors.black,
-                          indicatorColor: Colors.white,
+                          indicatorColor: Colors.lightBlue,
                           indicatorWeight: 2,
                           indicator: BoxDecoration(
                             color: Colors.white,
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage>
                   child: TabBarView(
                     controller: tabController,
                     children: [
-                      Tab1(),
+                      MyWork(),
                       Tab2(),
                     ],
                   ),

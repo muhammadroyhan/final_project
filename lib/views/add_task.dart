@@ -394,6 +394,7 @@ class _AddNewTaskState extends State<AddNewTask> {
                     ],
                   ),
                 ),
+                
               ],
             ),
           ),
