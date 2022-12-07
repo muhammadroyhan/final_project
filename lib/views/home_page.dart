@@ -1,3 +1,4 @@
+import 'package:final_project/models/addtask_models.dart';
 import 'package:final_project/views/add_task.dart';
 import 'package:final_project/views/mywork.dart';
 import 'package:final_project/views/tab2.dart';
@@ -118,7 +119,7 @@ class _HomePageState extends State<HomePage>
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => AddNewTask(),
+                builder: (context) => addTask(),
               ),
             );
           },
