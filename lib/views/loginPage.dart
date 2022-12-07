@@ -1,6 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, use_build_context_synchronously
+
+import 'dart:html';
 
 import 'package:final_project/edit_profile.dart';
+import 'package:final_project/models/my_response.dart';
+import 'package:final_project/module/login/login_controller.dart';
 import 'package:final_project/views/home_page.dart';
 import 'package:final_project/views/menu_screen.dart';
 import 'package:final_project/views/signupPage.dart';
@@ -15,8 +19,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  LoginController _controller = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             padding: EdgeInsets.all(10),
             child: TextField(
-              controller: nameController,
+              controller: _controller.emailController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -64,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.fromLTRB(10, 10, 10, 20),
             child: TextField(
               obscureText: true,
-              controller: passwordController,
+              controller: _controller.passwordController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -81,12 +84,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePage(),
-                  ),
-                );
+                _login();
               },
               child: Text(
                 'Login',
@@ -168,5 +166,15 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  void _login() async {
+    MyResponse response = await _controller.login();
+
+    if (response.code == "00") {
+      // login Berhasil
+    } else {
+      // login gagal
+    }
   }
 }
