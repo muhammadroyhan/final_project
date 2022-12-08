@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, use_build_context_synchronously
 
-import 'dart:html';
 
 import 'package:final_project/edit_profile.dart';
 import 'package:final_project/models/my_response.dart';
