@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, use_build_context_synchronously
 
-
 import 'package:final_project/edit_profile.dart';
 import 'package:final_project/models/my_response.dart';
 import 'package:final_project/module/login/login_controller.dart';
@@ -172,6 +171,12 @@ class _LoginPageState extends State<LoginPage> {
 
     if (response.code == "00") {
       // login Berhasil
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomePage(),
+        ),
+      );
     } else {
       // login gagal
     }
